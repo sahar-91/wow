@@ -1,6 +1,8 @@
 import NavBar from "@/Components/NavBar";
 import Banner from "@/Components/Banner";
 import GridHomePage from "@/Components/GridHomePage";
+import ContactUsHero from "@/Components/ContactUsHero";
+import Footer from "@/Components/Footer";
 
 export default function HomePage() {
   return (
@@ -8,6 +10,8 @@ export default function HomePage() {
       <NavBar />
       <Banner />
       <GridHomePage />
+      <ContactUsHero />
+      <Footer />
     </main>
      
   );
