@@ -25,7 +25,7 @@ export default function Footer() {
       
       <div className="container mx-auto px-2 md:px-10">
   
-      <div className="px-6 sm:px-10 lg:px-14 pt-14 pb-10 grid grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="px-6 md:px-10  pt-14 pb-10 grid grid-cols-2 md:grid-cols-4 gap-10">
 
         <div>
           <p className="mb-6 text-l">
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
      
-        <div className="hidden lg:block" />
+        <div className="hidden md:block" />
 
      
         <div>
@@ -82,13 +82,13 @@ export default function Footer() {
       </div>
 
   
-      <div className="px-6 sm:px-10 lg:px-16 pb-10 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6">
+      <div className="px-6 md:px-10 pb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 ">
      
-          <Link href="/" className="flex items-baseline gap-[2px] group">
+          <Link href="/" className="flex items-baseline">
             <span className="font-black text-[1.6rem] tracking-tight lowercase">
-              WOW studio
+            WOW studio
             </span>
           </Link>
 

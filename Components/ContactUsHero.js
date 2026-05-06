@@ -5,7 +5,7 @@ export default function ContactUsHero() {
   return (
     <section className="bg-black w-full min-h-[420px] flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 md:px-10 ">
-        <h2 className="font-bold text-white text-2xl mb-15 text-center"><span className="text-[#FF4046]">we'd love</span> to see your project <br />added here</h2>
+        <h2 className="font-bold text-white text-2xl mb-15 pt-30 text-center"><span className="text-[#FF4046]">we'd love</span> to see your project <br />added here</h2>
         
       <div className=" flex items-center justify-center w-full max-w-[1440px] mx-auto p-10">
         

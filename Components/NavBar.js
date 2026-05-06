@@ -15,7 +15,7 @@ export default function NavBar() {
     <div className="sticky !md:fixed top-0 z-50 bg-black">
      
       <div 
-       className={`container max-w-[1440px] mx-auto p-6 md:px-30 md:py-15 border-b-4 border-teal-500 md:border-b-0 
+       className={`container max-w-[1440px] mx-auto p-6 md:px-30 md:pt-15 md:pb-7 border-b-4 border-teal-500 md:border-b-0 
 transition-[max-height] duration-700 ease-in-out md:overflow-visible overflow-hidden
 ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}
 
