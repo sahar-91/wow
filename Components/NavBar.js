@@ -12,17 +12,15 @@ export default function NavBar() {
     `hover:text-white transition-colors ${ pathname === path ? "border-b border-teal-400 text-white" : "text-gray-400" }`;
 
   return (
-    <div className="sticky !md:fixed top-0 z-50 bg-black">
+    <div className="sticky top-0 z-50 bg-black">
      
       <div 
-       className={`container max-w-[1440px] mx-auto p-6 md:px-30 md:pt-15 md:pb-7 border-b-4 border-teal-500 md:border-b-0 
+       className={`container max-w-[1440px] mx-auto p-6 md:px-30 md:pt-15 md:pb-2 border-b-4 border-teal-500 md:border-b-0 
 transition-[max-height] duration-700 ease-in-out md:overflow-visible overflow-hidden
-${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}
-
-      >
+${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
         <header className="flex items-center justify-between w-full h-12">
           <div className="flex items-center">
-            <div className="w-10 h-10 md:w-25 md:h-25 rounded-full border-2 border-gray-400 text-white font-bold text-[10px] md:text-lg text-center flex items-center justify-center leading-tight">
+            <div className="w-10 h-10 md:w-20 md:h-20 rounded-full border-2 border-gray-400 text-white font-bold text-[10px] md:text-lg text-center flex items-center justify-center leading-tight">
               <Link href="/">wow<br />studio</Link>
             </div>
           </div>
