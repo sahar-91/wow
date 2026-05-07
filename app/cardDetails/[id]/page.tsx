@@ -13,9 +13,11 @@ export default async function Page({ params }: PageProps) {
   
   const items = json.data;
 
-  const item = items.find(
-    (project: any) => project.id.toString() === id
-  );
+  const currentIndex = items.findIndex((p: any) => p.id.toString() === id);
+  const item = items[currentIndex];
+  const prevItem = items[currentIndex - 1];
+  const nextItem = items[currentIndex + 1];
+
 
   if (!item) {
     return <div className="text-white">Project not found</div>;
@@ -62,6 +64,11 @@ export default async function Page({ params }: PageProps) {
             <p className="text-sm py-4 border-b-1 border-gray-400/25">DP: {item.cinematographer}</p>
 
             <p className="text-sm py-4 border-b-1 border-gray-400/25">AGENCY: {item.agency}</p>
+            <div className="flex justify-between mt-6 pt-4 ">
+            {prevItem ? (<Link href={`/cardDetails/${prevItem.id}`} className="text-sm hover:underline">← PREV</Link>) : <span className="text-sm text-gray-600">← PREV</span>}
+            {nextItem ? (<Link href={`/cardDetails/${nextItem.id}`} className="text-sm hover:underline">NEXT →</Link>) : <span className="text-sm text-gray-600">NEXT →</span>}
+            </div>
+
           </div>
           </div>
         </div>
