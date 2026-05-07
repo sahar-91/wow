@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function GridHomePage() {
     const data = await fetch('https://hanzo.dxpshift.com/api/projects');
     const project = await data.json();
@@ -8,7 +10,8 @@ export default async function GridHomePage() {
             <div className="container mx-auto max-w-[1440px] px-4 md:px-60">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-6 items-start">
                     {items.map((item) => (
-                        <div key={item.id} className="bg-black cursor-pointer mb-5 h-auto overflow-clip">
+                        <Link key={item.id} href={`/cardDetails/${item.id}`}>
+                        <div className="bg-black cursor-pointer mb-5 h-auto overflow-clip">
                             <div className="w-full h-full overflow-hidden">
                             <img src={item.image} alt={item.title} className=" object-cover transform ease-in duration-300 hover:scale-125" />
                             </div>
@@ -17,6 +20,7 @@ export default async function GridHomePage() {
                         <p className="text-gray-400 text-sm">{item.description}</p>
                     </div>
                 </div>
+                </Link>
             ))}
         </div>
         </div>
