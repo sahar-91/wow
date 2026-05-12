@@ -3,8 +3,8 @@
 import Link from "next/link";
 
 const sitemapLinks = [
-  { label: "about us", href: "/about-us" },
-  { label: "our work", href: "/our-work" },
+  { label: "about us", href: "/about" },
+  { label: "latest news", href: "/latest-news" },
   { label: "our clients", href: "/our-clients" },
   { label: "our team", href: "/our-team" },
   { label: "contact us", href: "/contact-us" },
@@ -25,7 +25,7 @@ export default function Footer() {
       
       <div className="container mx-auto px-2 md:px-10">
   
-      <div className="px-6 md:px-10  pt-14 pb-10 grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="px-6 md:px-10 pt-14 pb-10 grid grid-cols-2 md:grid-cols-4 gap-10">
 
         <div>
           <p className="mb-6 text-l">

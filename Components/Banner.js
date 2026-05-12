@@ -6,8 +6,7 @@ export default function Banner() {
 
       <div className="container mx-auto px-6">
       
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
-                      w-[300px] h-[300px] md:w-[420px] md:h-[420px] z-0">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px]">
 
         
         <div className="absolute inset-0 rounded-full border border-teal-400" />
