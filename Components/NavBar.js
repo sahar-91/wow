@@ -29,6 +29,7 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
           <nav className="hidden md:block">
             <ul className="flex items-center list-none font-bold gap-7">
               <li className={linkUndeline("/about")}><Link href="/about">about us</Link></li>
+              <li className={linkUndeline("/latest-news")}><Link href="/latest-news">latest news</Link></li>
               <li className={linkUndeline("/work")}><Link href="/work">our work</Link></li>
               <li className={linkUndeline("/clients")}><Link href="/clients">our clients</Link></li>
               <li className={linkUndeline("/team")}><Link href="/team">our team</Link></li>

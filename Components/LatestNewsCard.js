@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function LatestNewsCard({ data }) {
+export default function LatestNewsCard({data, setSlideIndex}) {
 
   const news = [...data.sections].sort((a, b) => a.order - b.order);
 
@@ -19,6 +19,7 @@ export default function LatestNewsCard({ data }) {
           nextEl: ".news-next",
           prevEl: ".news-prev",
         }}
+        onSlideChange={(swiper) => setSlideIndex(swiper.activeIndex + 1)}
         spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
