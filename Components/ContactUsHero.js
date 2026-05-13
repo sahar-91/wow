@@ -10,8 +10,7 @@ export default function ContactUsHero() {
       <div className=" flex items-center justify-center w-full max-w-[1440px] mx-auto p-10">
         
         <div className="relative flex items-center justify-center w-[300px] h-[240px] md:w-[400px] md:h-[340px]">
-          
-          
+                    
           <div className="absolute w-[170px] h-[170px] md:w-[200px] md:h-[200px] -left-5 -top-5 bg-[#FF4046] rounded-full z-10" />
           
           
