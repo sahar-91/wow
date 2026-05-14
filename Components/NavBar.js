@@ -1,17 +1,44 @@
 'use client';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from "../app/context/LanguageContext";
+
 
 export default function NavBar() {
   const [active, setActive] = useState(false);
-  const [language, setLanguage] = useState('EN');
+  const { language, setLanguage } = useLanguage();
   const pathname = usePathname();
 
   const linkUndeline = (path) => 
     `hover:text-white transition-colors ${ pathname === path ? "border-b border-teal-400 text-white" : "text-gray-400" }`;
 
+  useEffect(() => {
+  document.documentElement.dir = language === "AR" ? "rtl" : "ltr";
+  document.documentElement.lang = language.toLowerCase();
+}, [language]);
+
+  const t = {
+  EN: {
+    about: "about us",
+    news: "latest news",
+    work: "our work",
+    clients: "our clients",
+    team: "our team",
+    contact: "contact us",
+  },
+  AR: {
+    about: "من نحن",
+    news: "آخر الأخبار",
+    work: "أعمالنا",
+    clients: "عملاؤنا",
+    team: "فريقنا",
+    contact: "اتصل بنا",
+  },
+};
+
   return (
+    
     <div className="sticky top-0 z-50 bg-black">
      
       <div 
@@ -28,12 +55,12 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
          
           <nav className="hidden md:block">
             <ul className="flex items-center list-none font-bold gap-7">
-              <li className={linkUndeline("/about")}><Link href="/about">about us</Link></li>
-              <li className={linkUndeline("/latest-news")}><Link href="/latest-news">latest news</Link></li>
-              <li className={linkUndeline("/work")}><Link href="/work">our work</Link></li>
-              <li className={linkUndeline("/clients")}><Link href="/clients">our clients</Link></li>
-              <li className={linkUndeline("/team")}><Link href="/team">our team</Link></li>
-              <li className={linkUndeline("/contact")}><Link href="/contact">contact us</Link></li>
+              <li className={linkUndeline("/about")}><Link href="/about">{t[language].about}</Link></li>
+              <li className={linkUndeline("/latest-news")}><Link href="/latest-news">{t[language].news}</Link></li>
+              <li className={linkUndeline("/work")}><Link href="/work">{t[language].work}</Link></li>
+              <li className={linkUndeline("/clients")}><Link href="/clients">{t[language].clients}</Link></li>
+              <li className={linkUndeline("/team")}><Link href="/team">{t[language].team}</Link></li>
+              <li className={linkUndeline("/contact")}><Link href="/contact">{t[language].contact}</Link></li>
               <LanguageToggle language={language} setLanguage={setLanguage} />
             </ul>
           </nav>
@@ -68,10 +95,10 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
 
 function LanguageToggle({ language, setLanguage }) {
   return (
-    <div onClick={() => setLanguage(language === 'EN' ? 'FR' : 'EN')} className="relative w-14 h-7 bg-transparent border border-white rounded-full flex items-center cursor-pointer p-1 transition-all duration-300">
+    <div onClick={() => setLanguage(language === 'EN' ? 'AR' : 'EN')} className="relative w-14 h-7 bg-transparent border border-white rounded-full flex items-center cursor-pointer p-1 transition-all duration-300">
       <div className={`absolute w-6 h-6 bg-white rounded-full transition-all duration-300 ease-in-out ${language === 'EN' ? 'translate-x-6' : 'translate-x-0'}`} />
       <div className="relative w-full flex justify-around items-center font-bold text-[10px] z-10 select-none">
-        <span className={language === 'FR' ? 'text-black' : 'text-white'}>FR</span>
+        <span className={language === 'AR' ? 'text-black' : 'text-white'}>AR</span>
         <span className={language === 'EN' ? 'text-black' : 'text-white'}>EN</span>
       </div>
     </div>

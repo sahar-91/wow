@@ -1,6 +1,22 @@
 'use client'
-
+import { useLanguage } from "../app/context/LanguageContext";
 export default function Banner() {
+  const { language } = useLanguage();
+  const t = {
+  EN: {
+    line1: "here's a teeny-weeny glimpse of our work.",
+    line2: "what's coming later is",
+    highlight: "even",
+    highlight2:"greater",
+
+  },
+  AR: {
+    line1: "هذه لمحة صغيرة عن أعمالنا.",
+    line2: "ما سيأتي لاحقًا هو",
+    highlight:"بكثير",
+    highlight2:"أعظم",
+  }
+};
   return (
     <div className="relative bg-black flex flex-col h-150 items-center justify-center overflow-hidden pt-20">
 
@@ -16,21 +32,21 @@ export default function Banner() {
       </div>
 
       
-  <div className="relative z-10 text-center px-6 max-w-[90vw] md:max-w-[70%] mx-auto">
+  <div className={`relative ${language === "AR" ? "text-right" : "text-left"} z-10 text-center px-6 max-w-[90vw] md:max-w-[70%] mx-auto`}>
  
   <p className="text-[7vw] md:text-7xl text-white mb-2 leading-tight text-balance">
-    here's a teeny-weeny<br /> glimpse of our work.
+    {t[language].line1}
   </p>
 
   <p className="text-[7vw] md:text-7xl text-white mb-6 text-balance">
-    what's coming later is
+    {t[language].line2}
   </p>
 
   <div className="flex items-center justify-center gap-4">
     <span className="w-10 h-0.5 bg-red-500" />
     <h1 className="text-4xl md:text-7xl font-extrabold whitespace-nowrap">
-      <span className="text-red-500">even</span>{' '}
-      <span className="text-white">greater</span>
+      <span className="text-red-500">{t[language].highlight}</span>{' '}
+      <span className="text-white">{t[language].highlight2}</span>
     </h1>
     <span className="w-10 h-0.5 bg-red-500" />
   </div>

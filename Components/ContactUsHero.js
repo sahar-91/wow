@@ -1,11 +1,29 @@
 'use client';
 import Link from 'next/link';
+import { useLanguage } from "../app/context/LanguageContext";
 
 export default function ContactUsHero() {
+  const { language } = useLanguage();
+  const t = {
+  EN: {
+    title1: "we'd love ",
+    title2: "to see your project ",
+    title3: "added here",
+    contact: "contact us",
+  },
+  AR: {
+    title1:" نحب ان ",
+    title2: " نرى مشروعك",
+    title3: " مضاف هنا",
+    contact: "اتصل بنا",
+  }
+};
+
   return (
+
     <section className="bg-black w-full min-h-[420px] flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 md:px-10 ">
-        <h2 className="font-bold text-white text-2xl mb-15 pt-30 text-center"><span className="text-[#FF4046]">we'd love</span> to see your project <br />added here</h2>
+        <h2 className="font-bold text-white text-2xl mb-15 pt-30 text-center"><span className="text-[#FF4046]">{t[language].title1}</span> {t[language].title2} <br />{t[language].title3}</h2>
         
       <div className=" flex items-center justify-center w-full max-w-[1440px] mx-auto p-10">
         
@@ -22,7 +40,7 @@ export default function ContactUsHero() {
           
           <div className="absolute z-20 flex right-10">
             <Link href="/contact-us" className="text-white font-bold text-3xl">
-              contact us
+              {t[language].contact}
             </Link>
           </div>
         </div>
