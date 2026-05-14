@@ -23,8 +23,8 @@ export default function WhatMoviesAreOnWow() {
               "absolute inset-0 h-full w-[50%] rounded-xl bg-cyan-400 transition-all duration-300",
 
               activeTab === "people"
-                ? "left-2"
-                : "left-[calc(50%+4px)]",
+                ? "left-0"
+                : "left-[50%]",
             ].join(" ")}
           />
 

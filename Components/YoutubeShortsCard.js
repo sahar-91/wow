@@ -37,7 +37,7 @@ function ShortCard({ short, isActive }) {
   return (
     <div
       className={[
-        "relative overflow-hidden rounded-[22px] bg-[#050505] transition-all duration-500",
+        "relative overflow-hidden rounded-[22px] bg-[#050505]",
         isActive
           ? "h-[380px] w-full scale-110 -translate-y-8 md:h-[520px] md:-translate-y-12 lg:h-[410px] lg:-translate-y-18"
           : "h-[300px] w-full opacity-70 md:h-[380px] lg:h-[350px]",
@@ -82,7 +82,7 @@ export default function YoutubeShortsCard({ shorts, setIndex }) {
   return (
     <div className="relative w-full min-w-0">
       <Swiper
-        initialSlide={0}
+        initialSlide={1}
         modules={[Navigation]}
         navigation={{
           nextEl: ".shorts-next",
