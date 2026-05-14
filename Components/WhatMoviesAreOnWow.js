@@ -15,8 +15,8 @@ export default function WhatMoviesAreOnWow() {
     <div className="bg-black py-20">
 
       <div className="container mx-auto px-6 md:px-20">
-
-        <div className="relative mx-auto my-10 flex h-[70px] w-[650px] cursor-pointer rounded-2xl bg-gray-600 p-2">
+        <div className="md:px-50">
+        <div className="relative mx-auto flex h-[70px] w-full cursor-pointer rounded-2xl bg-gray-600 p-2">
 
           <div
             className={[
@@ -55,12 +55,13 @@ export default function WhatMoviesAreOnWow() {
           </button>
 
         </div>
+        </div>
 
         {activeTab === "movies" ? (
 
-          <div className="flex items-center p-6 mt-6 text-white opacity-55 text-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center p-6 mt-6 text-white opacity-55 text-5xl mx-auto">
 
-            <div className="w-1/3">
+            <div className="w-1/3 mx-auto">
               <h1>
                 DISCOVER <br />
                 OUR <br />

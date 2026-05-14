@@ -70,7 +70,7 @@ function TestimonialCard({ item, isActive }) {
   return (
     <div
       className={[
-        "relative overflow-hidden rounded-[22px] border transition-all duration-500 ease-out",
+        "relative overflow-hidden rounded-[22px] border",
         isActive
           ? "h-[250px] w-[260px] -translate-y-6 border-cyan-400 bg-[#062f3e] text-white md:h-[280px] md:w-[320px] lg:h-[310px] lg:w-[380px]"
           : "h-[210px] w-[190px] border-white/10 bg-[#0b0b0b] text-white/85 opacity-70 md:h-[235px] md:w-[240px] lg:h-[250px] lg:w-[300px]",
