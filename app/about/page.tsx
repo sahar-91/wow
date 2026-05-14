@@ -1,4 +1,5 @@
 import AboutUs from "@/Components/AboutUs";
+import WhatMoviesAreOnWow from "@/Components/WhatMoviesAreOnWow";
 
 export default async function AboutPage() {
   const res = await fetch(
@@ -8,5 +9,11 @@ export default async function AboutPage() {
 
   const json = await res.json();
 
-  return <AboutUs sections={json.data.sections} />;
+  return (
+    <div>
+      <WhatMoviesAreOnWow />
+      <AboutUs sections={json.data.sections} />
+      
+    </div>
+  );
 }
