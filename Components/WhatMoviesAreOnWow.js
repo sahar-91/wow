@@ -12,7 +12,7 @@ export default function WhatMoviesAreOnWow() {
   const [activeTab, setActiveTab] = useState("movies");
 
   return (
-    <div className="bg-black py-20">
+    <div className="bg-black py-20 overflow-x-hidden">
 
       <div className="container mx-auto px-6 md:px-20">
         <div className="md:px-50">
@@ -59,9 +59,9 @@ export default function WhatMoviesAreOnWow() {
 
         {activeTab === "movies" ? (
 
-          <div className="flex flex-col md:flex-row items-center p-6 mt-6 text-white opacity-55 text-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:p-6 mt-6 text-white opacity-55 text-2xl md:text-5xl mx-auto">
 
-            <div className="w-1/3 mx-auto">
+            <div className="md:w-1/3 mx-auto">
               <h1>
                 DISCOVER <br />
                 OUR <br />
@@ -70,7 +70,7 @@ export default function WhatMoviesAreOnWow() {
               </h1>
             </div>
 
-            <div className="w-2/3">
+            <div className="w-full md:w-2/3">
               <YoutubeShortsSection />
             </div>
 

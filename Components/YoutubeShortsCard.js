@@ -90,7 +90,6 @@ export default function YoutubeShortsCard({ shorts, setIndex }) {
         }}
         onSlideChange={handleSlideChange}
         centeredSlides={true}
-        
         grabCursor={true}
         slidesPerView={3.5}
         spaceBetween={30}
