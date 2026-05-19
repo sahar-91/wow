@@ -4,7 +4,7 @@ export default function subMenuAboutSec() {
       id="about"
       className="min-h-screen bg-white px-6 py-28"
     >
-      <div className="container mx-auto grid lg:grid-cols-2 gap-20 items-center">
+       <div className="container mx-auto px-6 md:px-20 grid lg:grid-cols-2 gap-20 items-center">
         <div>
           <p className="text-cyan-500 text-sm font-bold tracking-[3px] mb-5">
             ABOUT

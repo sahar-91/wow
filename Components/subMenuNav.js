@@ -63,7 +63,7 @@ export default function subMenuNav() {
 
   return (
     <div className="sticky top-0 z-50 bg-[#edf2f4] border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6">
+       <div className="container mx-auto px-6 md:px-20">
         <div className="flex items-center gap-10 h-[70px]">
           {sections.map((section) => (
             <button
