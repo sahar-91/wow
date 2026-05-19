@@ -10,7 +10,7 @@ export default async function AboutPage() {
   const json = await res.json();
 
   return (
-    <div>
+    <div className="overflow-x-clip">
       <WhatMoviesAreOnWow />
       <AboutUs sections={json.data.sections} />
       

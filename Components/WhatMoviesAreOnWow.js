@@ -61,11 +61,11 @@ export default function WhatMoviesAreOnWow() {
 
           <div className="flex flex-col md:flex-row items-center md:p-6 mt-6 text-white opacity-55 text-2xl md:text-5xl text-start md:mx-auto">
 
-            <div className="md:w-1/3 w-full ">
+            <div className="md:w-1/3 w-full  md:whitespace-normal ">
               <h1>
-                DISCOVER <br />
-                OUR <br />
-                POPULAR <br />
+                DISCOVER <br className="hidden md:block " />
+                OUR <br className="hidden md:block " />
+                POPULAR <br className="hidden md:block " />
                 MOVIES
               </h1>
             </div>
