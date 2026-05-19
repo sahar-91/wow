@@ -79,6 +79,7 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
         <nav className={`md:hidden flex flex-col items-center pt-16 pb-10 transition-opacity duration-700 ${active ? 'opacity-100' : 'opacity-0'}`}>
           <ul className="flex flex-col items-center list-none font-bold text-4xl text-gray-400 gap-8">
             <li className={`${linkUndeline("/")} ${active ? 'p-4':''}`}><Link href="/" onClick={() => setActive(false)}>about us</Link></li>
+            <li className={`${linkUndeline("/latest-news")} ${active ? 'p-4':''}`}><Link href="/latest-news" onClick={() => setActive(false)}>latest news</Link></li>
             <li className={`${linkUndeline("/job")} ${active ? 'p-4':''}`}><Link href="/job" onClick={() => setActive(false)}>our work</Link></li>
             <li className={`${linkUndeline("/client")} ${active ? 'p-4':''}`}><Link href="/clients" onClick={() => setActive(false)}>our clients</Link></li>
             <li className={`${linkUndeline("/team")} ${active ? 'p-4':''}`}><Link href="/team" onClick={() => setActive(false)}>our team</Link></li>

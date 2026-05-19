@@ -9,6 +9,7 @@ export default function Footer() {
   const sitemapLinks = [
     { en: "about us", ar: "من نحن", href: "/about" },
     { en: "latest news", ar: "آخر الأخبار", href: "/latest-news" },
+    { en: "our work", ar: "أعمالنا", href: "/work" },
     { en: "our clients", ar: "عملاؤنا", href: "/our-clients" },
     { en: "our team", ar: "فريقنا", href: "/our-team" },
     { en: "contact us", ar: "اتصل بنا", href: "/contact-us" },
