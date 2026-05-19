@@ -1,14 +1,43 @@
 'use client';
-import { useState,useEffect } from 'react';
+import { useState,useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from "../app/context/LanguageContext";
-
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(useGSAP);
 
 export default function NavBar() {
   const [active, setActive] = useState(false);
   const { language, setLanguage } = useLanguage();
   const pathname = usePathname();
+  const navRef = useRef(null);
+  const logoRef = useRef(null);
+  const linksRef = useRef([]);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      tl.from(
+        logoRef.current,
+        {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.9,
+        },
+        '-=0.4'
+      )
+      .from(
+        linksRef.current.filter(Boolean),
+        {
+          opacity: 0,
+          y: -10,
+          duration: 0.4,
+          stagger: 0.06,
+        },
+        '-=0.4'
+      );
+  }, []);
 
   const linkUndeline = (path) => 
     `hover:text-white transition-colors ${ pathname === path ? "border-b border-teal-400 text-white" : "text-gray-400" }`;
@@ -49,7 +78,8 @@ transition-[max-height] duration-700 ease-in-out md:overflow-visible overflow-hi
 ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
         <header className="flex items-center justify-between w-full h-auto">
           <div className="flex items-center">
-            <div className="w-10 h-10 md:w-20 md:h-20 rounded-full border-2 border-gray-400 text-white font-bold text-[10px] md:text-lg text-center flex items-center justify-center leading-tight">
+            
+            <div ref={logoRef} className="w-10 h-10 md:w-20 md:h-20 rounded-full border-2 border-gray-400 text-white font-bold text-[10px] md:text-lg text-center flex items-center justify-center leading-tight">
               <Link href="/">wow<br />studio</Link>
             </div>
           </div>
@@ -57,13 +87,13 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
          
           <nav className="hidden md:block">
             <ul className="flex items-center list-none font-bold gap-7">
-              <li className={linkUndeline("/about")}><Link href="/about">{t[language].about}</Link></li>
-              <li className={linkUndeline("/latest-news")}><Link href="/latest-news">{t[language].news}</Link></li>
-              <li className={linkUndeline("/subMenu")}><Link href="/subMenu">{t[language].subMenu}</Link></li>
-              <li className={linkUndeline("/work")}><Link href="/work">{t[language].work}</Link></li>
-              <li className={linkUndeline("/clients")}><Link href="/clients">{t[language].clients}</Link></li>
-              <li className={linkUndeline("/team")}><Link href="/team">{t[language].team}</Link></li>
-              <li className={linkUndeline("/contact")}><Link href="/contact">{t[language].contact}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/about")}><Link href="/about">{t[language].about}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/latest-news")}><Link href="/latest-news">{t[language].news}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/subMenu")}><Link href="/subMenu">{t[language].subMenu}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/work")}><Link href="/work">{t[language].work}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/clients")}><Link href="/clients">{t[language].clients}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/team")}><Link href="/team">{t[language].team}</Link></li>
+              <li ref={el => linksRef.current.push(el)} className={linkUndeline("/contact")}><Link href="/contact">{t[language].contact}</Link></li>
               <LanguageToggle language={language} setLanguage={setLanguage} />
             </ul>
           </nav>
