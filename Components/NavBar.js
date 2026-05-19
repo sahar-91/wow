@@ -22,6 +22,7 @@ export default function NavBar() {
   EN: {
     about: "about us",
     news: "latest news",
+    subMenu: "submenu",
     work: "our work",
     clients: "our clients",
     team: "our team",
@@ -30,6 +31,7 @@ export default function NavBar() {
   AR: {
     about: "من نحن",
     news: "آخر الأخبار",
+    subMenu: "القائمة الفرعية",
     work: "أعمالنا",
     clients: "عملاؤنا",
     team: "فريقنا",
@@ -39,7 +41,7 @@ export default function NavBar() {
 
   return (
     
-    <div className="sticky top-0 z-50 bg-black">
+    <div className="top-0 z-50 bg-black">
      
       <div 
        className={`container max-w-[1440px] mx-auto p-6 md:px-30 md:pt-15 md:pb-2 border-b-4 border-teal-500 md:border-b-0 
@@ -57,6 +59,7 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
             <ul className="flex items-center list-none font-bold gap-7">
               <li className={linkUndeline("/about")}><Link href="/about">{t[language].about}</Link></li>
               <li className={linkUndeline("/latest-news")}><Link href="/latest-news">{t[language].news}</Link></li>
+              <li className={linkUndeline("/subMenu")}><Link href="/subMenu">{t[language].subMenu}</Link></li>
               <li className={linkUndeline("/work")}><Link href="/work">{t[language].work}</Link></li>
               <li className={linkUndeline("/clients")}><Link href="/clients">{t[language].clients}</Link></li>
               <li className={linkUndeline("/team")}><Link href="/team">{t[language].team}</Link></li>
@@ -80,8 +83,9 @@ ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
           <ul className="flex flex-col items-center list-none font-bold text-4xl text-gray-400 gap-8">
             <li className={`${linkUndeline("/")} ${active ? 'p-4':''}`}><Link href="/" onClick={() => setActive(false)}>about us</Link></li>
             <li className={`${linkUndeline("/latest-news")} ${active ? 'p-4':''}`}><Link href="/latest-news" onClick={() => setActive(false)}>latest news</Link></li>
-            <li className={`${linkUndeline("/job")} ${active ? 'p-4':''}`}><Link href="/job" onClick={() => setActive(false)}>our work</Link></li>
-            <li className={`${linkUndeline("/client")} ${active ? 'p-4':''}`}><Link href="/clients" onClick={() => setActive(false)}>our clients</Link></li>
+            <li className={`${linkUndeline("/subMenu")} ${active ? 'p-4':''}`}><Link href="/subMenu" onClick={() => setActive(false)}>submenu</Link></li>
+            <li className={`${linkUndeline("/work")} ${active ? 'p-4':''}`}><Link href="/work" onClick={() => setActive(false)}>our work</Link></li>
+            <li className={`${linkUndeline("/clients")} ${active ? 'p-4':''}`}><Link href="/clients" onClick={() => setActive(false)}>our clients</Link></li>
             <li className={`${linkUndeline("/team")} ${active ? 'p-4':''}`}><Link href="/team" onClick={() => setActive(false)}>our team</Link></li>
             <li className={`${linkUndeline("/contact")} ${active ? 'p-4':''}`}><Link href="/contact" onClick={() => setActive(false)}>contact us</Link></li>
             <div className="pt-4">
