@@ -44,10 +44,10 @@ export default function NavBar() {
     <div className="top-0 z-50 bg-black">
      
       <div 
-       className={`container max-w-[1440px] mx-auto md:px-20 md:pt-6 md:pb-2 border-b-4 border-teal-500 md:border-b-0 
+       className={`container mx-auto md:px-20 md:pt-6 md:pb-2 border-b-4 border-teal-500 md:border-b-0 
 transition-[max-height] duration-700 ease-in-out md:overflow-visible overflow-hidden
 ${active ? 'max-h-[1000px]' : 'max-h-24'} md:max-h-full h-auto`}>
-        <header className="flex items-center justify-between w-full h-12">
+        <header className="flex items-center justify-between w-full h-auto">
           <div className="flex items-center">
             <div className="w-10 h-10 md:w-20 md:h-20 rounded-full border-2 border-gray-400 text-white font-bold text-[10px] md:text-lg text-center flex items-center justify-center leading-tight">
               <Link href="/">wow<br />studio</Link>
