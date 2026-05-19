@@ -2,7 +2,7 @@ export default function subMenuAboutSec() {
   return (
     <section
       id="about"
-      className="min-h-screen bg-white px-6 py-28"
+      className=" bg-white py-28"
     >
        <div className="container mx-auto px-6 md:px-20 grid lg:grid-cols-2 gap-20 items-center">
         <div>
