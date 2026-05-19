@@ -13,7 +13,7 @@ export default function subMenuBanner() {
 
       <div className="relative z-10 flex items-center h-full container mx-auto px-6 md:px-20">
         <h1 className="text-white text-6xl font-bold">
-          Company Page
+        Company Page
         </h1>
       </div>
     </section>
