@@ -4,8 +4,11 @@ import GridHomePage from "@/Components/GridHomePage";
 import ContactUsHero from "@/Components/ContactUsHero";
 import TextOverlayImages from "@/Components/TextOverlayImages";
 import WhyChooseUsSection from "@/Components/WhyChooseUsSection";
+import PinnedScrollSection from "@/Components/PInnedScrollSection";
+
 
 export default function HomePage() {
+
   return (
     <main className="min-h-screen bg-black text-ink">
       
@@ -13,6 +16,7 @@ export default function HomePage() {
       <TextOverlayImages />
       <GridHomePage />
       <ContactUsHero />
+      <PinnedScrollSection />
       <WhyChooseUsSection />
       
     </main>

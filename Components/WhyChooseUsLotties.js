@@ -10,6 +10,8 @@ export default function WhyChooseUs({ data }) {
   const lottieRef = useRef(null);
   const containerRef = useRef(null);
   const hasPlayed = useRef(false);
+  
+
 
   useEffect(() => {
     const el = containerRef.current;
