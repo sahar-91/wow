@@ -1,9 +1,8 @@
 'use client';
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { useRef, useEffect } from 'react';
+import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 import Link from 'next/link';
 import { useLanguage } from "../app/context/LanguageContext";
 
@@ -30,20 +29,65 @@ const redCircleRef = useRef(null);
 const ringRef      = useRef(null);
 const ctaRef       = useRef(null);
 
-useGSAP(() => {
+
+useEffect(() => {
+
   const tl = gsap.timeline({
-    scrollTrigger: { 
-      trigger: sectionRef.current, 
-      start: 'top 95%',
-      toggleActions: 'play none none none', 
-      once: true, 
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "top 80%",
+      toggleActions: "play none none none",
+      once: true,
+      markers: true,
     },
   });
-  tl.from(titleRef.current,     { opacity: 0, y: 28, duration: 1, ease: 'power2.out' })
-    .from(redCircleRef.current, { opacity: 0, rotation: -20, scale: 0.7, duration: 1.5, ease: 'power3.out', transformOrigin: 'center center' }, '-=0.4')
-    .from(ringRef.current,      { opacity: 0, rotation: 15, scale: 0.8, duration: 1.5, ease: 'power3.out', transformOrigin: 'center center' }, '-=0.7')
-    .from(ctaRef.current,       { opacity: 0, y: 16, duration: 0.9, ease: 'power2.out' }, '-=0.3');
-}, { scope: sectionRef });
+
+  tl.from(titleRef.current, {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power3.out",
+  })
+    .from(
+      redCircleRef.current,
+      {
+        opacity: 0,
+        scale: 0,
+        rotation: -30,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+      },
+      "-=0.5"
+    )
+    .from(
+      ringRef.current,
+      {
+        opacity: 0,
+        scale: 0.7,
+        rotation: 20,
+        duration: 1.2,
+        ease: "power3.out",
+      },
+      "-=1"
+    )
+    .from(
+      ctaRef.current,
+      {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        ease: "power2.out",
+      },
+      "-=0.6"
+    );
+
+  return () => {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  };
+
+}, []);
+
+
   return (
 
     <section ref={sectionRef} className="bg-black w-full min-h-[420px] flex items-center justify-center overflow-hidden">
