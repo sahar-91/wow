@@ -38,7 +38,6 @@ useEffect(() => {
       start: "top 80%",
       toggleActions: "play none none none",
       once: true,
-      markers: true,
     },
   });
 
