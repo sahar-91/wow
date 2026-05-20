@@ -5,6 +5,7 @@ import ContactUsHero from "@/Components/ContactUsHero";
 import TextOverlayImages from "@/Components/TextOverlayImages";
 import WhyChooseUsSection from "@/Components/WhyChooseUsSection";
 import PinnedScrollSection from "@/Components/PInnedScrollSection";
+import ServicesSection from "@/Components/ServicesSection";
 
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <GridHomePage />
       <ContactUsHero />
       <PinnedScrollSection />
+      <ServicesSection />
       <WhyChooseUsSection />
       
     </main>
