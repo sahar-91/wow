@@ -54,7 +54,7 @@ export default function Services({ textSection, statSection, leftImages, rightIm
 
         <div
           ref={textRef}
-          className="md:w-[45%] w-full flex items-center md-auto md:items-start px-8 md:px-16 py-20"
+          className="md:w-[55%] w-full flex items-center md-auto md:items-start px-8 md:px-16 py-20"
         >
           <div className="flex flex-col gap-6">
 
@@ -96,15 +96,15 @@ export default function Services({ textSection, statSection, leftImages, rightIm
         </div>
 
 
-        <div className="w-full md:w-[55%] h-[500px] flex flex-col-reverse gap-6 md:!h-screen ">
-            {textSection?.details?.cta_text && (
+        <div className="w-full md:w-[45%] h-[500px] md:!h-screen flex-col flex gap-2 md:gap-6">
+          <ServicesImageColumns leftImages={leftImages} rightImages={rightImages} />
+           {textSection?.details?.cta_text && (
               <Link
                 href={`/${textSection.details.cta_page_alias}`}
                 className="border border-[#242c84] rounded-full mx-auto md:!hidden !flex text-[#242c84] px-6 py-3 text-sm tracking-widest w-fit hover:bg-[#242c84] hover:text-white transition-all duration-300">
                 {textSection.details.cta_text} →
               </Link>
             )}
-          <ServicesImageColumns leftImages={leftImages} rightImages={rightImages} />
         </div>
 
 
