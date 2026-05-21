@@ -15,7 +15,7 @@ export default async function ServicesSection() {
   const rightList = sections.find(s => s.handle === "home-section-list-5");
 
   return (
-    <div className="overflow-hidden max-h-screen">
+    <div className="overflow-hidden">
     <Services
       textSection={textSection}
       statSection={statSection}

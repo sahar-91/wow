@@ -12,15 +12,11 @@ export default function ServicesImageColumns({ leftImages, rightImages }) {
   const Card = ({ item, id }) => (
     <div
       key={id}
-      className="mb-3 relative overflow-hidden rounded-xl cursor-pointer"
-      style={{
-        transform: hoveredId === id ? "scale(1.04)" : "scale(1)",
-        transition: "transform 0.4s ease",
-      }}
+      className="mb-3 relative rounded-xl cursor-pointer !overflow-hidden group"
       onMouseEnter={() => setHoveredId(id)}
     >
       <div className="relative h-[500px] w-full">
-        <img src={item.image} alt={item.title} className="w-full h-full object-cover transition duration-300 hover:scale-110" />
+        <img src={item.image} alt={item.title} className="w-full h-full object-cover transition duration-300 group-hover:scale-110" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e6e]/90 to-transparent" />
         <p className="absolute bottom-4 left-4 text-white text-base font-semibold">{item.title}</p>
       </div>
